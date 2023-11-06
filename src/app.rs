@@ -145,6 +145,7 @@ impl App for AppData {
             });
             ui.horizontal(|ui| {
                 ui.label(&self.save_msg);
+                ui.label(&self.generation_msg);
             });
         });
         CentralPanel::default().show(ctx, |ui| {
