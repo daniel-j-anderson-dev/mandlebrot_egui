@@ -1422,9 +1422,9 @@ dependencies = [
 ]
 
 [[package]]
-name = "mandlebrot"
+name = "mandelbrot"
 version = "0.1.0"
-source = "git+https://github.com/daniel-j-anderson-dev/mandlebrot.git#e90eae70284630c8567228a75c950956bec683fe"
+source = "git+https://github.com/daniel-j-anderson-dev/mandelbrot.git#e90eae70284630c8567228a75c950956bec683fe"
 dependencies = [
  "epaint",
  "image",
@@ -1433,12 +1433,12 @@ dependencies = [
 ]
 
 [[package]]
-name = "mandlebrot-egui"
+name = "mandelbrot-egui"
 version = "0.1.0"
 dependencies = [
  "eframe",
  "image",
- "mandlebrot",
+ "mandelbrot",
  "num",
  "rayon",
 ]

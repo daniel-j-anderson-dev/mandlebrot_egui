@@ -1,5 +1,5 @@
 
-use mandlebrot::{
+use mandelbrot::{
     Pixel,
     calculate_pixel_data,
     pixels_to_rgbimage,
@@ -24,7 +24,7 @@ use num::{
     Zero
 };
 
-pub const APP_NAME: &str = "Mandlebrot Set Image Generator";
+pub const APP_NAME: &str = "Mandelbrot Set Image Generator";
 
 pub fn native_options() -> NativeOptions {
     NativeOptions {
@@ -68,7 +68,7 @@ impl AppData {
             scale_factor: 1.0,
             origin: Complex::zero(),
             iteration_max: 1000,
-            save_path: String::from("output/mandlebrot.png"),
+            save_path: String::from("output/mandelbrot.png"),
             save_msg: String::from(""),
             generation_msg: String::from(""),
             pixel_data: None,
@@ -92,13 +92,13 @@ impl App for AppData {
         // TODO: Make numeric widget
         // Top panel has settings
         TopBottomPanel::top("Inputs").show(ctx, |ui| {
-            ui.heading("Mandlebrot Image Generator");
+            ui.heading("Mandelbrot Image Generator");
             ui.horizontal(|ui| {
                 ui.label("Image width:");
                 ui.add(DragValue::new(&mut self.image_width));
             });
             ui.horizontal(|ui| {
-                ui.label("Image width:");
+                ui.label("Image height:");
                 ui.add(DragValue::new(&mut self.image_height));
             });
             ui.horizontal(|ui| {
@@ -127,7 +127,7 @@ impl App for AppData {
                     self.generate_pixel_data();
                     if let Some((ref pixels, time)) = self.pixel_data {
                         let output = pixels_to_colorimage(pixels, self.image_width, self.image_height);
-                        self.texture = Some(ctx.load_texture("mandlebrot", output, TextureOptions::default()));
+                        self.texture = Some(ctx.load_texture("mandelbrot", output, TextureOptions::default()));
                         self.generation_msg = format!("Generated in {:?}", time);
                     }
                 }
