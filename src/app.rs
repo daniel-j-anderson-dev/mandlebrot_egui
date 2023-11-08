@@ -1,5 +1,4 @@
-
-use mandelbrot::{
+use mandlebrot::{
     Pixel,
     calculate_pixel_data,
     pixels_to_rgbimage,
